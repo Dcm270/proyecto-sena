@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Empleado</title>
+  {% include 'bootstrap.html' %}
+</head>
+<body class="page-gradient">
+  {% include 'menu.html' %}
+  <div class="container mt-5">
+    <div class="card-form">
+      <h1 class="mb-4">Registrar Empleado</h1>
+      <form action="{{ url_for('registrar') }}" method="POST">
+        <div class="mb-3">
+          <label class="form-label">Identificacion</label>
+          <input type="number" class="form-control" name="identificacion" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Apellido</label>
+          <input type="text" class="form-control" name="apellido" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Telefono</label>
+          <input type="number" class="form-control" name="telefono" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Cargo</label>
+          <input type="text" class="form-control" name="cargo" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Salario</label>
+          <input type="number" class="form-control" name="salario" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Departamento</label>
+          <input type="text" class="form-control" name="departamento" required>
+        </div>
+        <button type="submit" class="btn btn-warning">Agregar Empleado</button>
+        <a href="{{ url_for('index') }}" class="btn btn-outline-light ms-2">Ir al Inicio</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

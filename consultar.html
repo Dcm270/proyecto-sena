@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar Empleados</title>
+  {% include 'bootstrap.html' %}
+</head>
+<body class="page-gradient">
+  {% include 'menu.html' %}
+  <div class="container mt-5">
+    <div class="card-form">
+      <h1 class="mb-4">Lista de Empleados</h1>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th><th>Identificacion</th><th>Nombre</th><th>Apellido</th>
+              <th>Telefono</th><th>Cargo</th><th>Salario</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for e in empleados %}
+            <tr>
+              <td>{{ e['id'] }}</td>
+              <td>{{ e['identificacion'] }}</td>
+              <td>{{ e['nombre'] }}</td>
+              <td>{{ e['apellido'] }}</td>
+              <td>{{ e['telefono'] }}</td>
+              <td>{{ e['cargo'] }}</td>
+              <td>{{ e['salario'] }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="7" class="text-center">No hay empleados registrados</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
